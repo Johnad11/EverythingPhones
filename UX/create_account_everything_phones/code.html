@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Join Everything Phones | Premium Tech Experience</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-fixed": "#2e004e",
+                    "outline": "#988d9e",
+                    "on-tertiary": "#482a00",
+                    "error": "#ffb4ab",
+                    "tertiary-fixed-dim": "#fdb969",
+                    "tertiary": "#fdb969",
+                    "primary-fixed-dim": "#deb7ff",
+                    "on-surface-variant": "#cfc2d5",
+                    "surface-container": "#231e26",
+                    "tertiary-container": "#7e4d00",
+                    "on-secondary-fixed-variant": "#6a0baa",
+                    "on-error-container": "#ffdad6",
+                    "surface-bright": "#3d3741",
+                    "on-tertiary-fixed-variant": "#663e00",
+                    "tertiary-fixed": "#ffddba",
+                    "on-primary-container": "#e4c2ff",
+                    "on-background": "#eadfec",
+                    "secondary-fixed-dim": "#e0b6ff",
+                    "on-primary-fixed": "#2d0050",
+                    "background": "#16121a",
+                    "on-primary-fixed-variant": "#680eac",
+                    "primary": "#deb7ff",
+                    "secondary": "#e0b6ff",
+                    "surface-container-low": "#1f1a22",
+                    "surface-dim": "#16121a",
+                    "surface": "#16121a",
+                    "primary-container": "#7b2cbf",
+                    "inverse-on-surface": "#342e38",
+                    "secondary-container": "#6d11ad",
+                    "surface-container-lowest": "#110c15",
+                    "primary-fixed": "#f1dbff",
+                    "outline-variant": "#4c4353",
+                    "on-surface": "#eadfec",
+                    "on-error": "#690005",
+                    "inverse-surface": "#eadfec",
+                    "surface-container-high": "#2d2831",
+                    "on-primary": "#4a007f",
+                    "surface-variant": "#38333c",
+                    "inverse-primary": "#8234c6",
+                    "on-secondary": "#4c007d",
+                    "secondary-fixed": "#f2daff",
+                    "surface-container-highest": "#38333c",
+                    "on-secondary-container": "#d7a4ff",
+                    "on-tertiary-container": "#ffc480",
+                    "error-container": "#93000a",
+                    "surface-tint": "#deb7ff",
+                    "on-tertiary-fixed": "#2b1700"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "base": "8px",
+                    "margin": "32px",
+                    "gutter": "24px",
+                    "sm": "12px",
+                    "lg": "48px",
+                    "xl": "80px",
+                    "md": "24px",
+                    "xs": "4px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Space Grotesk"],
+                    "label-sm": ["Space Grotesk"],
+                    "body-md": ["Space Grotesk"],
+                    "headline-md": ["Space Grotesk"],
+                    "label-md": ["Space Grotesk"],
+                    "body-lg": ["Space Grotesk"],
+                    "headline-xl": ["Space Grotesk"]
+            },
+            "fontSize": {
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(35, 30, 38, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .neon-glow {
+            box-shadow: 0 8px 32px rgba(157, 78, 221, 0.3);
+        }
+        .input-gradient-focus:focus {
+            border-bottom-color: #deb7ff;
+            background: linear-gradient(to top, rgba(123, 44, 191, 0.1), transparent);
+            outline: none;
+        }
+        body {
+            background-color: #110c15;
+            background-image: radial-gradient(circle at 0% 0%, rgba(123, 44, 191, 0.15) 0%, transparent 50%),
+                              radial-gradient(circle at 100% 100%, rgba(123, 44, 191, 0.1) 0%, transparent 50%);
+        }
+    </style>
+</head>
+<body class="font-body-md text-on-background min-h-screen flex flex-col">
+<header class="sticky top-0 w-full z-50 flex justify-between items-center px-6 py-4 md:px-12 bg-zinc-950/80 backdrop-blur-lg border-b border-white/10">
+<div class="text-xl font-bold text-white uppercase tracking-widest font-headline-lg">Everything Phones</div>
+<div class="hidden md:flex items-center gap-base">
+<span class="text-label-sm text-zinc-500">ALREADY HAVE AN ACCOUNT?</span>
+<a class="text-primary hover:text-white transition-colors font-label-md" href="#">SIGN IN</a>
+</div>
+</header>
+<main class="flex-grow flex items-center justify-center px-6 py-xl">
+<div class="w-full max-w-4xl grid md:grid-cols-2 gap-0 overflow-hidden rounded-xl glass-panel neon-glow">
+<div class="hidden md:block relative overflow-hidden bg-surface-container-highest">
+<img class="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-overlay" data-alt="Modern high-tech smartphone silhouette with purple neon rim light against a deep black background, cinematic and sharp" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBm8wusMhURXo2lk-_EfpgO3flUBh_XkWmOk56XrQIHkm5ksobCj-sQQSNDv5ROWRL2txxwrgnn3Tms5yTCXiu_Vx_UkmFMgkCZOZ4tfIP-nr4f8lcoGNqw2TRWGLaqYqtKKwZFrhTKpFiCLiBR-DtZgdquUY8tAIjvNjl5nKM1FEd6WH-zWCcVc2zEC4iIRVaHtsRpXPbaB3SAV7qo9B24NlgpiVYWIn0ENBv-wRmbCgijMEl09cJYMI7bUIUsl2g0BQ6g_HXqT6L2"/>
+<div class="relative z-10 p-12 h-full flex flex-col justify-between">
+<div>
+<h2 class="font-headline-xl text-white mb-md">Join the Future.</h2>
+<p class="text-on-surface-variant text-body-lg">Access exclusive tech swaps, priority repairs, and the latest hardware drops in Abuja.</p>
+</div>
+<div class="space-y-sm">
+<div class="flex items-center gap-sm text-primary">
+<span class="material-symbols-outlined" data-icon="check_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-label-md">Secure Cloud Sync</span>
+</div>
+<div class="flex items-center gap-sm text-primary">
+<span class="material-symbols-outlined" data-icon="check_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-label-md">Abuja Local Support</span>
+</div>
+<div class="flex items-center gap-sm text-primary">
+<span class="material-symbols-outlined" data-icon="check_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-label-md">Premium Device Insurance</span>
+</div>
+</div>
+</div>
+</div>
+<div class="p-8 md:p-12 flex flex-col">
+<div class="mb-xl">
+<div class="flex justify-between items-end mb-xs">
+<span class="text-label-sm text-primary tracking-widest uppercase">Step 02 of 04</span>
+<span class="text-label-sm text-zinc-500">PERSONAL DETAILS</span>
+</div>
+<div class="h-1 w-full bg-surface-variant overflow-hidden">
+<div class="h-full bg-primary-container w-1/2 transition-all duration-700 ease-out"></div>
+</div>
+</div>
+<form class="space-y-lg">
+<div class="space-y-md">
+<div class="relative group">
+<label class="block text-label-sm text-outline mb-xs group-focus-within:text-primary transition-colors">FULL NAME</label>
+<input class="w-full bg-transparent border-b border-outline-variant py-sm text-white font-body-md input-gradient-focus transition-all placeholder:text-zinc-700" placeholder="John Doe" type="text"/>
+</div>
+<div class="relative group">
+<label class="block text-label-sm text-outline mb-xs group-focus-within:text-primary transition-colors">EMAIL ADDRESS</label>
+<input class="w-full bg-transparent border-b border-outline-variant py-sm text-white font-body-md input-gradient-focus transition-all placeholder:text-zinc-700" placeholder="john@example.com" type="email"/>
+</div>
+<div class="relative group">
+<label class="block text-label-sm text-outline mb-xs group-focus-within:text-primary transition-colors">PHONE NUMBER</label>
+<div class="flex gap-sm">
+<span class="py-sm text-zinc-500 font-body-md border-b border-outline-variant">+234</span>
+<input class="flex-grow bg-transparent border-b border-outline-variant py-sm text-white font-body-md input-gradient-focus transition-all placeholder:text-zinc-700" placeholder="801 234 5678" type="tel"/>
+</div>
+</div>
+<div class="relative group">
+<label class="block text-label-sm text-outline mb-xs group-focus-within:text-primary transition-colors">ABUJA NEIGHBORHOOD</label>
+<select class="w-full bg-transparent border-b border-outline-variant py-sm text-white font-body-md focus:outline-none focus:border-primary transition-all appearance-none">
+<option class="bg-surface-container" value="">Select Location</option>
+<option class="bg-surface-container" value="maitama">Maitama</option>
+<option class="bg-surface-container" value="asokoro">Asokoro</option>
+<option class="bg-surface-container" value="wuse2">Wuse II</option>
+<option class="bg-surface-container" value="garki">Garki</option>
+<option class="bg-surface-container" value="guzape">Guzape</option>
+<option class="bg-surface-container" value="jabi">Jabi</option>
+</select>
+<div class="absolute right-0 bottom-3 pointer-events-none">
+<span class="material-symbols-outlined text-outline">expand_more</span>
+</div>
+</div>
+</div>
+<div class="pt-md flex flex-col gap-base">
+<button class="w-full bg-primary-container hover:bg-secondary-container text-white py-md rounded-lg font-label-md transition-all flex items-center justify-center gap-sm group active:scale-95" type="button">
+                            CONTINUE TO SECURITY
+                            <span class="material-symbols-outlined transition-transform group-hover:translate-x-1" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<button class="w-full border border-outline-variant hover:border-primary/50 text-outline hover:text-white py-md rounded-lg font-label-md transition-all active:scale-95" type="button">
+                            GO BACK
+                        </button>
+</div>
+</form>
+<div class="mt-xl text-center">
+<p class="text-label-sm text-zinc-600">
+                        By signing up, you agree to our 
+                        <a class="text-primary hover:underline" href="#">Terms of Service</a> and 
+                        <a class="text-primary hover:underline" href="#">Privacy Policy</a>.
+                    </p>
+</div>
+</div>
+</div>
+</main>
+<footer class="w-full px-6 py-12 md:px-12 flex flex-col md:flex-row justify-between gap-8 items-center bg-black border-t border-zinc-900 font-['Space_Grotesk'] text-sm antialiased">
+<div class="flex flex-col items-center md:items-start gap-xs">
+<div class="text-lg font-black text-purple-500">Everything Phones</div>
+<p class="text-zinc-500">© 2024 Everything Phones. Your Phone, Your Trust, Our Commitment.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-md">
+<a class="text-zinc-500 hover:text-purple-300 transition-all" href="#">Abuja Office</a>
+<a class="text-zinc-500 hover:text-purple-300 transition-all" href="#">Shop</a>
+<a class="text-zinc-500 hover:text-purple-300 transition-all" href="#">Swap</a>
+<a class="text-zinc-500 hover:text-purple-300 transition-all" href="#">Repairs</a>
+<a class="text-zinc-500 hover:text-purple-300 transition-all" href="#">Gaming</a>
+<a class="text-zinc-500 hover:text-purple-300 transition-all" href="#">Privacy Policy</a>
+</div>
+</footer>
+</body></html>

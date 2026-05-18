@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-variant": "#1a1625",
+                    "on-primary-fixed-variant": "#5a189a",
+                    "secondary-fixed": "#c77dff",
+                    "on-background": "#e0aaff",
+                    "secondary-container": "#7b2cbf",
+                    "surface": "#0a0a0a",
+                    "on-tertiary-fixed": "#10002b",
+                    "on-secondary-fixed": "#240046",
+                    "surface-tint": "#9d4edd",
+                    "primary-fixed-dim": "#9d4edd",
+                    "outline-variant": "#3c096c",
+                    "surface-container-lowest": "#000000",
+                    "primary-container": "#9d4edd",
+                    "tertiary-container": "#5a189a",
+                    "primary-fixed": "#c77dff",
+                    "on-tertiary-fixed-variant": "#3c096c",
+                    "on-tertiary": "#ffffff",
+                    "on-primary": "#10002b",
+                    "secondary-fixed-dim": "#9d4edd",
+                    "surface-dim": "#0a0a0a",
+                    "surface-container": "#121212",
+                    "background": "#000000",
+                    "secondary": "#9d4edd",
+                    "error-container": "#440000",
+                    "inverse-primary": "#5a189a",
+                    "inverse-on-surface": "#0a0a0a",
+                    "inverse-surface": "#e0aaff",
+                    "tertiary-fixed-dim": "#7b2cbf",
+                    "primary": "#e0aaff",
+                    "on-surface": "#f7f2f9",
+                    "surface-container-high": "#1a1625",
+                    "on-error-container": "#ffdad6",
+                    "surface-container-low": "#0d0d0d",
+                    "tertiary-fixed": "#c77dff",
+                    "on-primary-container": "#ffffff",
+                    "on-surface-variant": "#b1a7b9",
+                    "outline": "#5a189a",
+                    "on-primary-fixed": "#10002b",
+                    "surface-container-highest": "#241d33",
+                    "error": "#ffb4ab",
+                    "tertiary": "#f3e5f5",
+                    "on-secondary-fixed-variant": "#3c096c",
+                    "on-secondary-container": "#f7f2f9",
+                    "on-tertiary-container": "#e0aaff",
+                    "on-secondary": "#10002b",
+                    "surface-bright": "#1e1e1e",
+                    "on-error": "#690005"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-sm": "8px",
+                    "margin-mobile": "20px",
+                    "base": "4px",
+                    "container-max": "1440px",
+                    "stack-lg": "48px",
+                    "stack-md": "24px",
+                    "gutter": "16px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Space Grotesk"],
+                    "headline-md": ["Space Grotesk"],
+                    "body-lg": ["Inter"],
+                    "body-sm": ["Inter"],
+                    "price-display": ["Space Grotesk"],
+                    "body-md": ["Inter"],
+                    "headline-xl": ["Space Grotesk"],
+                    "label-bold": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "price-display": ["28px", {"lineHeight": "1", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-bold": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(26, 22, 37, 0.6);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(157, 78, 221, 0.2);
+        }
+        .glow-sm:hover {
+            box-shadow: 0 0 20px rgba(157, 78, 221, 0.4);
+        }
+        .inner-glow {
+            box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.05);
+        }
+        .hero-gradient {
+            background: radial-gradient(circle at top right, rgba(157, 78, 221, 0.15), transparent 60%);
+        }
+        .purple-glow-text {
+            text-shadow: 0 0 10px rgba(157, 78, 221, 0.5);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar (from COMPONENTS_15) -->
+<header class="bg-black/80 backdrop-blur-xl fixed top-0 w-full border-b border-white/10 shadow-[0_8px_32px_rgba(157,78,221,0.15)] z-50">
+<div class="flex justify-between items-center px-8 h-20 w-full max-w-[1440px] mx-auto font-['Space_Grotesk'] tracking-tight antialiased">
+<div class="text-2xl font-bold tracking-tighter text-white uppercase">Everything Phones</div>
+<nav class="hidden md:flex items-center space-x-8">
+<a class="text-gray-400 hover:text-white transition-colors duration-300 ease-in-out hover:scale-105" href="#">Shop</a>
+<a class="text-gray-400 hover:text-white transition-colors duration-300 ease-in-out hover:scale-105" href="#">Swap</a>
+<a class="text-gray-400 hover:text-white transition-colors duration-300 ease-in-out hover:scale-105" href="#">Repairs</a>
+<a class="text-purple-400 border-b-2 border-purple-500 pb-1 font-bold duration-300 ease-in-out hover:scale-105" href="#">Gaming</a>
+</nav>
+<div class="flex items-center space-x-6 text-purple-500">
+<div class="relative hidden sm:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-500">search</span>
+<input class="bg-[#0f0f0f] border border-white/10 rounded-full py-2 pl-10 pr-4 text-sm focus:ring-2 focus:ring-purple-500 w-64 text-on-surface" placeholder="Search tech..." type="text"/>
+</div>
+<button class="duration-300 ease-in-out hover:scale-105 hover:text-purple-400">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+</button>
+<button class="duration-300 ease-in-out hover:scale-105 hover:text-purple-400">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</button>
+</div>
+</div>
+</header>
+<main class="min-h-screen hero-gradient pt-20">
+<!-- Hero Section -->
+<section class="max-w-7xl mx-auto px-6 py-12 md:py-20">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<div class="space-y-6">
+<span class="inline-block bg-secondary-container/30 text-secondary px-3 py-1 rounded-full font-label-bold tracking-wider">PREMIUM GAMING GEAR</span>
+<h1 class="font-headline-xl text-headline-xl text-white leading-none purple-glow-text">Elevate Your Play Beyond Reality</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">From the latest PS5 consoles to elite workstation laptops, we bridge the gap with high-performance hardware and authentic Abuja reliability.</p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-primary-container text-on-primary-container px-8 py-4 rounded-lg font-label-bold hover:shadow-[0_0_25px_rgba(157,78,221,0.6)] transition-all active:scale-95 uppercase tracking-widest">BROWSE CONSOLES</button>
+<button class="border border-purple-500 text-purple-400 px-8 py-4 rounded-lg font-label-bold hover:bg-purple-500/10 transition-all active:scale-95 uppercase tracking-widest">REPAIR SERVICES</button>
+</div>
+</div>
+<div class="relative group">
+<div class="absolute inset-0 bg-purple-600/20 blur-[120px] rounded-full group-hover:bg-purple-600/30 transition-all"></div>
+<img alt="Sony PlayStation 5 console and DualSense controller" class="relative z-10 w-full h-auto drop-shadow-[0_0_30px_rgba(157,78,221,0.2)] transform group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCq7g4sGa6dh5-rU3OxcZc9-CGHqYDoctESf7OyjBW_T-Vd9QfkMQ45MV2k2NZN-J_12ecil7Rb-UCBYM8DTd-ImusY0tH-udbag9xvW0KHe5njLZqEK5Y26QnqNabu9358aHA_J12vBaa9ay-uu41wo9uIcBze7sJhq5dySsK_WX3gAzw9nFrJixLj-q0pfok-VuUQT9RsIugESzwUROB5nsvb5GJJfkeUO7b-yQLkUR5-sbMLnJFxnzYFjcQ4vMdETUTfyMPgIqKn"/>
+</div>
+</div>
+</section>
+<!-- Bento Grid: Featured Tech -->
+<section class="max-w-7xl mx-auto px-6 py-12">
+<h2 class="font-headline-lg text-headline-lg text-white mb-8 border-l-4 border-purple-500 pl-4 uppercase tracking-tighter">Featured Ecosystems</h2>
+<div class="grid grid-cols-1 md:grid-cols-4 grid-rows-2 gap-4 h-auto md:h-[600px]">
+<!-- Large Card: PS5 -->
+<div class="md:col-span-2 md:row-span-2 glass-panel rounded-2xl p-8 relative overflow-hidden group">
+<div class="relative z-10 flex flex-col h-full justify-between">
+<div>
+<h3 class="font-headline-md text-headline-md text-white">PlayStation 5 Console</h3>
+<p class="text-on-surface-variant mt-2">Ultra-High Speed SSD &amp; Ray Tracing</p>
+</div>
+<div class="flex items-center justify-between mt-auto">
+<span class="font-price-display text-price-display text-purple-400">₦650,000</span>
+<button class="bg-white/5 hover:bg-purple-500/20 border border-white/10 p-3 rounded-full transition-colors group-hover:border-purple-500/50">
+<span class="material-symbols-outlined text-white">add_shopping_cart</span>
+</button>
+</div>
+</div>
+<img alt="PS5 Dashboard UI" class="absolute right-[-10%] bottom-[-10%] w-3/4 opacity-40 group-hover:opacity-70 transition-opacity pointer-events-none" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCP-jWez8W_l2KNyuNRAyw4dO7hUexn0WewD2QrIL3wPOqSLM1UDoCd_dWEcsjfo5e7gneIOvZAnzWZzCXE6lCQbJjz8qcppDOyKnh3DoeGfnaaVvQtpvKqGhvfPuMEc0Asy2SS2pEzYKT5H4MpLywXI_9vJ7ByUmxhn1ieJnywhE-Idcg0xRHxhseLq_moK9Zl39YlLNBLhtZVO9QidMh7Xng79sT3zPvkAxjNIrB7ImK5Eo61qk9RCPYP8Mj3stG12A2fVgBI727a"/>
+</div>
+<!-- Medium Card: Laptops -->
+<div class="md:col-span-2 glass-panel rounded-2xl p-6 relative overflow-hidden group">
+<div class="flex gap-6 items-center">
+<div class="flex-1 z-10">
+<h3 class="font-headline-md text-headline-md text-white">Elite Laptops</h3>
+<p class="text-on-surface-variant">MacBooks &amp; RTX Gaming Rigs</p>
+<span class="font-price-display text-price-display text-purple-400 mt-2 block">From ₦350k</span>
+</div>
+<img alt="Modern Laptop" class="w-40 h-auto rounded-lg z-10 group-hover:rotate-3 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBreOz_LRZTVBaK8GxTOsqVqsoOYsz607iUhk17ixDpMWhcp1HmyZxwngBTjJ1RT7mDGgfHXvhAuCZlXMbt1zj-crTvGMtCC-SslqsfmIeUq3AHbljuaPK3d0K02ROZE2wB5YV2y0-NPS6apkZkHM27tGFFVURykzdmpt3GBnn9avVoOKnHePsTJSO9HJljNmwarOCS5vUXKyahTSKhOH_zM3Y2LKs-6THAJNv2oF2-D8R8_plqhe6mxsnRsT5r2sgnsio63iqpPJWa"/>
+</div>
+</div>
+<!-- Small Card: Controllers -->
+<div class="glass-panel rounded-2xl p-6 flex flex-col justify-between group hover:bg-purple-900/10 transition-colors">
+<span class="material-symbols-outlined text-purple-400 text-3xl">sports_esports</span>
+<div>
+<h4 class="font-headline-md text-headline-md text-white">PS4 Pro</h4>
+<p class="text-sm text-on-surface-variant">4K Entertainment</p>
+</div>
+</div>
+<!-- Small Card: Accessories -->
+<div class="glass-panel rounded-2xl p-6 flex flex-col justify-between group hover:bg-purple-900/10 transition-colors">
+<span class="material-symbols-outlined text-purple-400 text-3xl">headphones</span>
+<div>
+<h4 class="font-headline-md text-headline-md text-white">Elite Audio</h4>
+<p class="text-sm text-on-surface-variant">Surround Sound</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Product Grid: Full Inventory -->
+<section class="max-w-7xl mx-auto px-6 py-12">
+<div class="flex items-center justify-between mb-8">
+<h2 class="font-headline-lg text-headline-lg text-white uppercase tracking-tighter">The Gaming Vault</h2>
+<div class="flex gap-2">
+<button class="px-5 py-2 bg-purple-600 text-white rounded-lg text-sm font-label-bold hover:bg-purple-500 transition-colors">ALL</button>
+<button class="px-5 py-2 bg-transparent rounded-lg text-sm font-label-bold text-gray-500 hover:text-white transition-colors">CONSOLES</button>
+<button class="px-5 py-2 bg-transparent rounded-lg text-sm font-label-bold text-gray-500 hover:text-white transition-colors">PERIPHERALS</button>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Product Card 1 -->
+<div class="glass-panel rounded-2xl p-4 flex flex-col group transition-all hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(157,78,221,0.2)]">
+<div class="relative overflow-hidden rounded-xl mb-4 bg-black aspect-square border border-white/5">
+<img alt="DualShock 4" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhFxybj95d_x1-5Kb_T9Eoxk1PD3vkCMDabZwZ2JZTEDR4llD-5lfyXlR75YNrT2qeHFXOaF5ari4AkgxxYHeXLIu9VIRDrqNcADxI6yJCAe2NQz6JQaLXbxiv5tX0apUVq5C-ZcONStn0aF-5HExPPlixpebHj0UbJwpf6R6NHCgPp2UA1yDXhhBYS995NirveNeGjijovYiCBlY5W9ZoBDi0hdhtHvDVZp1bwwH2veGTSsjIoilPhKJA9PMbuGY8fOTF79AeIu3L"/>
+<span class="absolute top-3 left-3 bg-secondary-container text-white text-[10px] px-2.5 py-1 rounded-full font-bold uppercase tracking-wider">READY STOCK</span>
+</div>
+<h3 class="font-headline-md text-lg text-white mb-1">DualShock 4 Controller</h3>
+<p class="text-xs text-on-surface-variant mb-4">Original Sony Jet Black, precision sticks</p>
+<div class="mt-auto flex items-center justify-between">
+<span class="font-price-display text-xl text-purple-400">₦45,000</span>
+<button class="bg-primary-container text-on-primary-container p-2.5 rounded-lg hover:brightness-125 transition-all">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="glass-panel rounded-2xl p-4 flex flex-col group transition-all hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(157,78,221,0.2)]">
+<div class="relative overflow-hidden rounded-xl mb-4 bg-black aspect-square border border-white/5">
+<img alt="PS5 Controller" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9_UBoFQYALj_uwuhFGyiVCu0CoIG0-k_fSXCvO6FElc_q370nOTPXJcFI3GN4-4BQm0GhhE6L1djOZ8kXJ9VHBfVhGKzjpqRuoMVxPJhw1EUWfsgZPnTXyniUk2mDhuF5cCDk3BDGsTaxQZCW3DNMCFYfhQDTLc_rTRc9wMgH6RXMP_m7aEDxN_sBNVbEevsLcrYCWYxHlKwdvjRKBxYqab6Nac1GJYIo_DBYEFJcxXbKfmR9tpcrzKWr3G4SrI-l295f9VuuvskP"/>
+</div>
+<h3 class="font-headline-md text-lg text-white mb-1">DualSense Edge</h3>
+<p class="text-xs text-on-surface-variant mb-4">Pro-grade customizable wireless controller</p>
+<div class="mt-auto flex items-center justify-between">
+<span class="font-price-display text-xl text-purple-400">₦185,000</span>
+<button class="bg-primary-container text-on-primary-container p-2.5 rounded-lg hover:brightness-125 transition-all">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="glass-panel rounded-2xl p-4 flex flex-col group transition-all hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(157,78,221,0.2)]">
+<div class="relative overflow-hidden rounded-xl mb-4 bg-black aspect-square border border-white/5">
+<img alt="Gaming Laptop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkjNf9OqZUK210Otri_mUGfKj1thHsROK7J3NfjTJA399D-SqRjEU3GdI5ajhG0SLZyB0L5v0F0HdQ0lfkRQVZDjoo896X2-jZN32yvq6xqCXX-1J1RBJvjgZRuyIDs6-ifP1RZFtZYy4WwuW6l_Zdm0fGzjuV5qFvEZAy9H9NcGihF2DXVwk2dOnyVjybdsekjLiTc1UxRzFstqHW0qTPylZG2tncW1413sMMa-97v6i8OAOLoGbbODYD2MxeMP1v7_bZobs1aSFj"/>
+<span class="absolute top-3 left-3 bg-error-container text-white text-[10px] px-2.5 py-1 rounded-full font-bold uppercase tracking-wider">LIMITED</span>
+</div>
+<h3 class="font-headline-md text-lg text-white mb-1">Razer Blade 15</h3>
+<p class="text-xs text-on-surface-variant mb-4">RTX 3070 Ti, 16GB RAM, 1TB SSD</p>
+<div class="mt-auto flex items-center justify-between">
+<span class="font-price-display text-xl text-purple-400">₦1,200,000</span>
+<button class="bg-primary-container text-on-primary-container p-2.5 rounded-lg hover:brightness-125 transition-all">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="glass-panel rounded-2xl p-4 flex flex-col group transition-all hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(157,78,221,0.2)]">
+<div class="relative overflow-hidden rounded-xl mb-4 bg-black aspect-square border border-white/5">
+<img alt="PS3 Console" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBClOERW6Z_eaFSQigBmRwsaHvv8TzSgMfbevqefFWEt2PQj2UaEclc5bsltx3C2em3e0NfQcS8eQNVc0-ROOPRmWp_e12yg_C0QDW686dKuWQz-kAj44msll0ozVJv_hzKluNaQThULcAD7A3p4pEP_BAugP1ZzDJDZZWdLknWLhSMeSk4yRlF06Q4WoE3ZVPQSaipsaN9ZnKsvKJjJi1gpDoMeu_VxvPJKWbcli2yADKIgVSQzR9V-MqG26wnzlMc1rHo0IpbQKVp"/>
+</div>
+<h3 class="font-headline-md text-lg text-white mb-1">PlayStation 3 Slim</h3>
+<p class="text-xs text-on-surface-variant mb-4">Refurbished Grade A, 500GB, 2 Controllers</p>
+<div class="mt-auto flex items-center justify-between">
+<span class="font-price-display text-xl text-purple-400">₦85,000</span>
+<button class="bg-primary-container text-on-primary-container p-2.5 rounded-lg hover:brightness-125 transition-all">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Newsletter / CTA -->
+<section class="max-w-7xl mx-auto px-6 py-24">
+<div class="bg-surface-container-highest rounded-[2.5rem] p-12 relative overflow-hidden border border-purple-500/10">
+<div class="relative z-10 max-w-2xl">
+<h2 class="font-headline-xl text-headline-lg text-white mb-4 uppercase tracking-tighter">Stay in the Tech Loop</h2>
+<p class="text-on-surface-variant mb-8 text-lg">Get exclusive early access to restocks of PS5 consoles and high-performance laptops. No spam, just elite tech.</p>
+<form class="flex flex-col sm:flex-row gap-4">
+<input class="flex-1 bg-black border border-white/10 rounded-xl px-6 py-4 focus:ring-2 focus:ring-purple-500 outline-none text-white transition-all" placeholder="Enter your email" type="email"/>
+<button class="bg-primary-container text-on-primary-container px-8 py-4 rounded-xl font-label-bold hover:shadow-[0_0_20px_rgba(157,78,221,0.5)] transition-all uppercase tracking-widest" type="submit">JOIN THE ELITE</button>
+</form>
+</div>
+<div class="absolute right-0 top-0 h-full w-1/3 bg-gradient-to-l from-purple-500/10 to-transparent hidden lg:block"></div>
+</div>
+</section>
+</main>
+<!-- Footer (from COMPONENTS_15) -->
+<footer class="bg-black w-full pt-20 pb-10 border-t border-white/5">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 max-w-[1440px] mx-auto font-['Space_Grotesk'] text-sm uppercase tracking-widest">
+<div class="space-y-4">
+<div class="text-lg font-black text-purple-500">Everything Phones</div>
+<p class="text-gray-500 normal-case leading-relaxed tracking-normal">Your definitive source for premium mobile tech and high-performance gaming in the heart of Abuja.</p>
+</div>
+<div>
+<h4 class="text-white font-bold mb-6">Quick Links</h4>
+<ul class="space-y-3">
+<li><a class="text-gray-500 hover:text-purple-400 transition-all duration-200" href="#">About Us</a></li>
+<li><a class="text-gray-500 hover:text-purple-400 transition-all duration-200" href="#">Contact</a></li>
+<li><a class="text-gray-500 hover:text-purple-400 transition-all duration-200" href="#">Privacy Policy</a></li>
+<li><a class="text-gray-500 hover:text-purple-400 transition-all duration-200" href="#">Terms of Service</a></li>
+<li><a class="text-gray-500 hover:text-purple-400 transition-all duration-200" href="#">FAQ</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-white font-bold mb-6">Company</h4>
+<ul class="space-y-3">
+<li><a class="text-gray-500 hover:text-purple-400 transition-all" href="#">Abuja Office</a></li>
+<li><a class="text-gray-500 hover:text-purple-400 transition-all" href="#">Service Guarantees</a></li>
+<li><a class="text-gray-500 hover:text-purple-400 transition-all" href="#">Privacy Policy</a></li>
+<li><a class="text-gray-500 hover:text-purple-400 transition-all" href="#">Contact Support</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-white font-bold mb-6">Socials</h4>
+<div class="flex gap-4 mb-8">
+<a class="w-10 h-10 rounded-full glass-panel flex items-center justify-center hover:text-purple-400 transition-all" href="#">
+<span class="material-symbols-outlined text-sm">public</span>
+</a>
+<a class="w-10 h-10 rounded-full glass-panel flex items-center justify-center hover:text-purple-400 transition-all" href="#">
+<span class="material-symbols-outlined text-sm">groups</span>
+</a>
+<a class="w-10 h-10 rounded-full glass-panel flex items-center justify-center hover:text-purple-400 transition-all" href="#">
+<span class="material-symbols-outlined text-sm">thumb_up</span>
+</a>
+</div>
+<p class="text-gray-500 text-[10px] leading-tight">© 2024 Everything Phones. Your Phone, Your Trust, Our Commitment.</p>
+</div>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,340 @@
+<html class="dark"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+                  "surface-variant": "#1a0b2e",
+                  "on-primary-fixed-variant": "#5a189a",
+                  "secondary-fixed": "#e0aaff",
+                  "on-background": "#f3e8ff",
+                  "secondary-container": "#3c096c",
+                  "surface": "#0a0118",
+                  "on-tertiary-fixed": "#0a0118",
+                  "on-secondary-fixed": "#10002b",
+                  "surface-tint": "#9d4edd",
+                  "primary-fixed-dim": "#7b2cbf",
+                  "outline-variant": "#3c096c",
+                  "surface-container-lowest": "#000000",
+                  "primary-container": "#7b2cbf",
+                  "tertiary-container": "#240046",
+                  "primary-fixed": "#c77dff",
+                  "on-tertiary-fixed-variant": "#5a189a",
+                  "on-tertiary": "#ffffff",
+                  "on-primary": "#ffffff",
+                  "secondary-fixed-dim": "#9d4edd",
+                  "surface-dim": "#0a0118",
+                  "surface-container": "#10002b",
+                  "background": "#000000",
+                  "secondary": "#9d4edd",
+                  "error-container": "#4a0000",
+                  "inverse-primary": "#240046",
+                  "inverse-on-surface": "#0a0118",
+                  "inverse-surface": "#f3e8ff",
+                  "tertiary-fixed-dim": "#c77dff",
+                  "primary": "#9d4edd",
+                  "on-surface": "#f3e8ff",
+                  "surface-container-high": "#240046",
+                  "on-error-container": "#ffdada",
+                  "surface-container-low": "#10002b",
+                  "tertiary-fixed": "#e0aaff",
+                  "on-primary-container": "#ffffff",
+                  "on-surface-variant": "#c77dff",
+                  "outline": "#5a189a",
+                  "on-primary-fixed": "#10002b",
+                  "surface-container-highest": "#3c096c",
+                  "error": "#ffb4ab",
+                  "tertiary": "#ffffff",
+                  "on-secondary-fixed-variant": "#3c096c",
+                  "on-secondary-container": "#e0aaff",
+                  "on-tertiary-container": "#c77dff",
+                  "on-secondary": "#10002b",
+                  "surface-bright": "#3c096c",
+                  "on-error": "#690005"
+          },
+          "borderRadius": {
+                  "DEFAULT": "0.25rem",
+                  "lg": "0.5rem",
+                  "xl": "0.75rem",
+                  "full": "9999px"
+          },
+          "spacing": {
+                  "stack-sm": "8px",
+                  "margin-mobile": "20px",
+                  "base": "4px",
+                  "container-max": "1440px",
+                  "stack-lg": "48px",
+                  "stack-md": "24px",
+                  "gutter": "16px"
+          },
+          "fontFamily": {
+                  "headline-lg": ["Space Grotesk"],
+                  "headline-md": ["Space Grotesk"],
+                  "body-lg": ["Inter"],
+                  "body-sm": ["Inter"],
+                  "price-display": ["Space Grotesk"],
+                  "body-md": ["Inter"],
+                  "headline-xl": ["Space Grotesk"],
+                  "label-bold": ["Inter"]
+          },
+          "fontSize": {
+                  "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                  "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                  "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                  "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                  "price-display": ["28px", {"lineHeight": "1", "fontWeight": "700"}],
+                  "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                  "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                  "label-bold": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "700"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .glass-card {
+      background: rgba(16, 0, 43, 0.7);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(157, 78, 221, 0.1);
+    }
+    .glow-sm:hover {
+      box-shadow: 0 0 15px rgba(157, 78, 221, 0.3);
+    }
+    .inner-glow {
+      box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.05);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar Section -->
+<header class="bg-black/80 backdrop-blur-xl fixed top-0 w-full border-b border-white/10 z-50 shadow-[0_8px_32px_rgba(157,78,221,0.15)]">
+<div class="flex justify-between items-center px-8 h-20 w-full max-w-[1440px] mx-auto font-['Space_Grotesk'] tracking-tight">
+<div class="text-2xl font-bold tracking-tighter text-white uppercase">Everything Phones</div>
+<nav class="hidden md:flex items-center space-x-8">
+<a class="text-gray-400 hover:text-white transition-colors duration-300 ease-in-out hover:scale-105" href="#">Shop</a>
+<a class="text-purple-400 border-b-2 border-purple-500 pb-1 duration-300 ease-in-out hover:scale-105" href="#">Swap</a>
+<a class="text-gray-400 hover:text-white transition-colors duration-300 ease-in-out hover:scale-105" href="#">Repairs</a>
+<a class="text-gray-400 hover:text-white transition-colors duration-300 ease-in-out hover:scale-105" href="#">Gaming</a>
+</nav>
+<div class="flex items-center space-x-6 text-purple-500">
+<span class="material-symbols-outlined cursor-pointer hover:text-purple-400 hover:shadow-[0_0_15px_rgba(157,78,221,0.5)] transition-all" data-icon="shopping_cart">shopping_cart</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-purple-400 hover:shadow-[0_0_15px_rgba(157,78,221,0.5)] transition-all" data-icon="person">person</span>
+</div>
+</div>
+</header>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative min-h-[614px] flex items-center overflow-hidden py-stack-lg">
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent z-10"></div>
+<img class="w-full h-full object-cover opacity-60" data-alt="Premium smartphone close-up with neon lighting reflecting on polished glass surface in a dark futuristic studio setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5signluxrA-NnGzG-4Vv94d82NBBrp7x_rw4fmCZUAonNzWdwgS0uZhiwQPvE_ZNiqXlXEYVjYM6XunRHYhhXvXt4JqXw8LjxcM7YLhhYvwX5T5012qPsPb273rxhkWG1-6S25iVSnTQGy0twj3kfzaPYNWDufP5LLRe1PsDsH3Qe7suPRO-my1SeFe2Iephc02X0lWhmOQyonqPHRJnuCur7JZxJ528tC-EX_y5lJv33TzcljyT2RXbooIoDQ4oFlbHmD4RFsmS4"/>
+</div>
+<div class="container-max mx-auto px-margin-mobile relative z-20">
+<div class="max-w-2xl">
+<span class="inline-block px-3 py-1 bg-secondary-container/30 text-secondary border border-secondary/30 rounded-full font-label-bold mb-stack-sm">
+            ABUJA EXCLUSIVE
+          </span>
+<h1 class="font-headline-xl text-headline-xl text-white mb-stack-md">Upgrade Effortlessly at Everything Phones.</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-stack-lg max-w-lg">
+            Trade in your old device for the latest tech. Instant valuation and same-day swap at our Abuja flagship store.
+          </p>
+<div class="flex flex-wrap gap-stack-md">
+<button class="px-8 py-4 bg-primary-container text-on-primary-container font-label-bold rounded-lg hover:shadow-[0_0_25px_rgba(157,78,221,0.5)] transition-all active:scale-95">
+              ESTIMATE TRADE-IN
+            </button>
+<button class="px-8 py-4 bg-transparent border border-primary-container text-primary-container font-label-bold rounded-lg hover:bg-primary-container/10 transition-all active:scale-95">
+              VISIT ABUJA OFFICE
+            </button>
+</div>
+</div>
+</div>
+</section>
+<!-- 3-Step Guide (Asymmetric Layout) -->
+<section class="py-stack-lg bg-surface-container-low">
+<div class="container-max mx-auto px-margin-mobile">
+<div class="mb-stack-lg text-center">
+<h2 class="font-headline-lg text-headline-lg text-white mb-stack-sm">The 3-Step Swap</h2>
+<p class="text-on-surface-variant max-w-xl mx-auto">Getting a new phone should be this simple. Experience Nigeria's most transparent trade-in process.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Step 1 -->
+<div class="glass-card p-8 rounded-xl relative overflow-hidden group border-white/5 hover:border-purple-500/30 transition-all">
+<div class="text-purple-500/10 text-9xl font-black absolute -right-4 -bottom-8 font-headline-xl select-none group-hover:text-purple-500/20 transition-colors">1</div>
+<div class="w-12 h-12 bg-primary-container/20 rounded-lg flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary-container" data-icon="location_on">location_on</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-white mb-4">Bring your phone</h3>
+<p class="text-on-surface-variant font-body-md">Visit our Elite Tech Solutions center in Abuja. No appointment needed—just walk in with your current device.</p>
+</div>
+<!-- Step 2 -->
+<div class="glass-card p-8 rounded-xl relative overflow-hidden group border-white/5 hover:border-purple-500/30 transition-all">
+<div class="text-purple-500/10 text-9xl font-black absolute -right-4 -bottom-8 font-headline-xl select-none group-hover:text-purple-500/20 transition-colors">2</div>
+<div class="w-12 h-12 bg-primary-container/20 rounded-lg flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary-container" data-icon="analytics">analytics</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-white mb-4">Get it valued</h3>
+<p class="text-on-surface-variant font-body-md">Our technicians perform a rapid 5-minute diagnostic to give you the highest fair-market value in Nigeria.</p>
+</div>
+<!-- Step 3 -->
+<div class="glass-card p-8 rounded-xl relative overflow-hidden group border-white/5 hover:border-purple-500/30 transition-all">
+<div class="text-purple-500/10 text-9xl font-black absolute -right-4 -bottom-8 font-headline-xl select-none group-hover:text-purple-500/20 transition-colors">3</div>
+<div class="w-12 h-12 bg-primary-container/20 rounded-lg flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary-container" data-icon="celebration">celebration</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-white mb-4">Take home a new one</h3>
+<p class="text-on-surface-variant font-body-md">Apply your credit toward any new device. Pay the difference and walk out with your upgrade instantly.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Estimate Form Section (Bento Style) -->
+<section class="py-stack-lg container-max mx-auto px-margin-mobile">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Form Left -->
+<div class="lg:col-span-7 glass-card p-8 rounded-xl border-primary-container/20">
+<h2 class="font-headline-md text-headline-md text-white mb-stack-md flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container" data-icon="calculate">calculate</span>
+            Swap Estimate
+          </h2>
+<form class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div>
+<label class="block text-on-surface-variant font-label-bold mb-2">CURRENT BRAND</label>
+<select class="w-full bg-black border border-white/10 rounded-lg px-4 py-3 text-white focus:border-primary-container outline-none appearance-none">
+<option>iPhone</option>
+<option>Samsung</option>
+<option>Google Pixel</option>
+<option>Others</option>
+</select>
+</div>
+<div>
+<label class="block text-on-surface-variant font-label-bold mb-2">MODEL</label>
+<input class="w-full bg-black border border-white/10 rounded-lg px-4 py-3 text-white focus:border-primary-container outline-none" placeholder="e.g. iPhone 13 Pro" type="text"/>
+</div>
+</div>
+<div>
+<label class="block text-on-surface-variant font-label-bold mb-2">STORAGE SIZE</label>
+<div class="flex flex-wrap gap-3">
+<button class="px-4 py-2 border border-white/10 rounded-full text-sm font-label-bold hover:border-primary-container hover:text-primary-container transition-colors" type="button">64GB</button>
+<button class="px-4 py-2 border border-primary-container bg-primary-container/10 text-primary-container rounded-full text-sm font-label-bold" type="button">128GB</button>
+<button class="px-4 py-2 border border-white/10 rounded-full text-sm font-label-bold hover:border-primary-container hover:text-primary-container transition-colors" type="button">256GB</button>
+<button class="px-4 py-2 border border-white/10 rounded-full text-sm font-label-bold hover:border-primary-container hover:text-primary-container transition-colors" type="button">512GB+</button>
+</div>
+</div>
+<div>
+<label class="block text-on-surface-variant font-label-bold mb-2">DEVICE CONDITION</label>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+<button class="p-4 border border-white/10 rounded-lg text-left hover:border-primary-container transition-all" type="button">
+<div class="font-label-bold text-white mb-1">Excellent</div>
+<div class="text-[10px] text-on-surface-variant">No scratches, looks brand new</div>
+</button>
+<button class="p-4 border border-primary-container bg-primary-container/10 rounded-lg text-left" type="button">
+<div class="font-label-bold text-white mb-1">Good</div>
+<div class="text-[10px] text-on-surface-variant">Minor wear, fully functional</div>
+</button>
+<button class="p-4 border border-white/10 rounded-lg text-left hover:border-primary-container transition-all" type="button">
+<div class="font-label-bold text-white mb-1">Cracked</div>
+<div class="text-[10px] text-on-surface-variant">Screen or back glass damage</div>
+</button>
+</div>
+</div>
+<button class="w-full py-4 bg-primary-container text-on-primary-container font-label-bold rounded-lg hover:shadow-[0_4px_25px_rgba(157,78,221,0.4)] transition-all">
+              CALCULATE VALUE
+            </button>
+</form>
+</div>
+<!-- Promo/Info Right -->
+<div class="lg:col-span-5 space-y-gutter">
+<div class="glass-card p-6 rounded-xl overflow-hidden relative group border-white/5">
+<img class="absolute inset-0 w-full h-full object-cover opacity-20 group-hover:scale-105 transition-transform duration-700" data-alt="Interior of a modern high-end tech retail store in Abuja with minimalist glass displays and focused spotlights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuClQptHqPtA4mu3A8tF1cvr4UM8yfZrQDQQDNpsxUP3wy0CTXYWmSTh2YCIlVjYZjdYqSN0le6Xk3V4fkxJ-O33JO_AVD0Oq8tLKWP8KkpA5RZ4iMB1ccpQFedgOZ9TjvdstrMY3S7SZwtesibv2Wd-MB3CRpybGloq3DVjOYodkBKhUvK2-iia8k2dKo4OrCt3xNqETW1M1hzbEmLASjgzL6tnUSdmbgQw_qNgie1vTRGPkvco7qPje2yVUdYnCF-HFH-ea2L3iZ8l"/>
+<div class="relative z-10">
+<h4 class="font-headline-md text-white mb-2">Abuja Experience Center</h4>
+<p class="text-on-surface-variant text-sm mb-4">Wuse II, Elite Tech Plaza. Open Monday - Saturday: 9am - 7pm.</p>
+<a class="text-primary-container text-sm font-label-bold flex items-center gap-1 hover:gap-2 transition-all" href="#">
+                GET DIRECTIONS <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="bg-secondary-container/10 border border-secondary/20 p-6 rounded-xl">
+<h4 class="font-headline-md text-secondary mb-2 flex items-center gap-2">
+<span class="material-symbols-outlined" data-icon="verified_user">verified_user</span>
+              Service Guarantees
+            </h4>
+<ul class="space-y-3 text-sm text-on-surface-variant">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary text-base" data-icon="check_circle">check_circle</span> 100% Data Erasure Guarantee</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary text-base" data-icon="check_circle">check_circle</span> Genuine Parts Documentation</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary text-base" data-icon="check_circle">check_circle</span> Immediate Cash Transfer or Credit</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- Why Us Section (Horizontal Scroll/Grid) -->
+<section class="py-stack-lg bg-surface-container-highest/10">
+<div class="container-max mx-auto px-margin-mobile">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter">
+<div class="p-6 text-center">
+<div class="text-primary-container font-headline-lg mb-2">5,000+</div>
+<div class="text-on-surface-variant font-label-bold uppercase">Phones Swapped</div>
+</div>
+<div class="p-6 text-center">
+<div class="text-primary-container font-headline-lg mb-2">N500M+</div>
+<div class="text-on-surface-variant font-label-bold uppercase">Value Returned</div>
+</div>
+<div class="p-6 text-center">
+<div class="text-primary-container font-headline-lg mb-2">15 Min</div>
+<div class="text-on-surface-variant font-label-bold uppercase">Avg. Swap Time</div>
+</div>
+<div class="p-6 text-center">
+<div class="text-primary-container font-headline-lg mb-2">4.9/5</div>
+<div class="text-on-surface-variant font-label-bold uppercase">Customer Rating</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Section -->
+<footer class="bg-black w-full pt-20 pb-10 border-t border-white/5">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 max-w-[1440px] mx-auto font-['Space_Grotesk'] text-sm uppercase tracking-widest">
+<div class="space-y-6">
+<div class="text-lg font-black text-purple-500">Everything Phones</div>
+<p class="text-gray-500 normal-case tracking-normal">Nigeria's elite destination for premium mobile tech and hassle-free swap services.</p>
+</div>
+<div class="space-y-6">
+<h5 class="text-purple-600 font-bold">Quick Links</h5>
+<ul class="space-y-4 text-gray-500">
+<li class="hover:text-purple-400 transition-all cursor-pointer">About Us</li>
+<li class="hover:text-purple-400 transition-all cursor-pointer">Abuja Office</li>
+<li class="hover:text-purple-400 transition-all cursor-pointer">Service Guarantees</li>
+</ul>
+</div>
+<div class="space-y-6">
+<h5 class="text-purple-600 font-bold">Support</h5>
+<ul class="space-y-4 text-gray-500">
+<li class="hover:text-purple-400 transition-all cursor-pointer">Privacy Policy</li>
+<li class="hover:text-purple-400 transition-all cursor-pointer">Contact Support</li>
+<li class="hover:text-purple-400 transition-all cursor-pointer">Terms of Service</li>
+</ul>
+</div>
+<div class="space-y-6">
+<h5 class="text-purple-600 font-bold">Newsletter</h5>
+<div class="flex gap-2">
+<input class="bg-white/5 border border-white/10 rounded px-3 py-2 text-xs w-full outline-none focus:border-purple-500 text-white placeholder:text-gray-600" placeholder="Email Address" type="email"/>
+<button class="bg-purple-600 text-white px-4 py-2 rounded font-bold text-xs hover:bg-purple-500 transition-colors">JOIN</button>
+</div>
+</div>
+</div>
+<div class="max-w-[1440px] mx-auto px-12 mt-20 pt-8 border-t border-white/10 text-center text-gray-500 font-['Space_Grotesk'] text-xs tracking-widest uppercase">
+      © 2024 Everything Phones. Your Phone, Your Trust, Our Commitment.
+    </div>
+</footer>
+</body></html>

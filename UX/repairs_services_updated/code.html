@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glow-sm {
+            text-shadow: 0 0 10px rgba(157, 78, 221, 0.5);
+        }
+        .glass-panel {
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(157, 78, 221, 0.15);
+        }
+        .cyber-glow {
+            box-shadow: 0 0 15px rgba(157, 78, 221, 0.3);
+        }
+        .cyber-glow:hover {
+            box-shadow: 0 0 25px rgba(157, 78, 221, 0.5);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface": "#000000",
+                        "on-surface": "#ffffff",
+                        "on-surface-variant": "#9ca3af",
+                        "primary": "#9d4ede",
+                        "on-primary": "#ffffff",
+                        "primary-container": "#7b2cbf",
+                        "on-primary-container": "#ffffff",
+                        "secondary": "#5a189a",
+                        "surface-container": "#111111",
+                        "surface-container-high": "#1a1a1a",
+                        "surface-container-low": "#0a0a0a",
+                        "outline": "#3c096c",
+                        "outline-variant": "#240046"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-sm": "8px",
+                        "margin-mobile": "20px",
+                        "base": "4px",
+                        "container-max": "1280px",
+                        "stack-lg": "48px",
+                        "stack-md": "24px",
+                        "gutter": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Space Grotesk"],
+                        "headline-md": ["Space Grotesk"],
+                        "body-lg": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "price-display": ["Space Grotesk"],
+                        "body-md": ["Inter"],
+                        "headline-xl": ["Space Grotesk"],
+                        "label-bold": ["Inter"],
+                        "space-grotesk": ["Space Grotesk"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "price-display": ["28px", {"lineHeight": "1", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-bold": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "700"}]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-black text-on-surface font-body-md selection:bg-primary-container selection:text-white">
+<!-- TopAppBar -->
+<header class="fixed top-0 z-50 bg-black/80 backdrop-blur-xl border-b border-white/10 shadow-[0_8px_32px_rgba(157,78,221,0.15)] font-space-grotesk tracking-tight w-full">
+<div class="flex justify-between items-center px-8 h-20 w-full max-w-[1440px] mx-auto">
+<div class="text-2xl font-bold tracking-tighter text-white uppercase">Everything Phones</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-gray-400 hover:text-white transition-colors duration-300 ease-in-out hover:scale-105 cursor-pointer" href="#">Shop</a>
+<a class="text-gray-400 hover:text-white transition-colors duration-300 ease-in-out hover:scale-105 cursor-pointer" href="#">Swap</a>
+<a class="text-purple-400 border-b-2 border-purple-500 pb-1 font-bold duration-300 ease-in-out hover:scale-105 cursor-pointer" href="#">Repairs</a>
+<a class="text-gray-400 hover:text-white transition-colors duration-300 ease-in-out hover:scale-105 cursor-pointer" href="#">Gaming</a>
+</nav>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-purple-500 cursor-pointer duration-300 ease-in-out hover:scale-105 hover:text-purple-400" data-icon="shopping_cart">shopping_cart</span>
+<span class="material-symbols-outlined text-purple-500 cursor-pointer duration-300 ease-in-out hover:scale-105 hover:text-purple-400" data-icon="person">person</span>
+</div>
+</div>
+</header>
+<main class="w-full pt-20">
+<!-- Hero Section -->
+<section class="relative min-h-[614px] flex items-center justify-center overflow-hidden py-stack-lg">
+<div class="absolute inset-0 z-0">
+<img alt="Professional repair" class="w-full h-full object-cover opacity-20" data-alt="Close up of a professional technician using precision tools to repair a modern smartphone circuit board with purple neon lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXpjUxhNPQiM_4Cs6eWVRuwtlkVRz_gmDeuYlSrqVykA00jPHcywj1OPEb-SEJYIHRoQYIbH9WWmzjzs9SxZoimTXQU92QZSCprwNH6lmSVWLK11k5CY7sBaeuxVFIfqeK-B71lOXC9hbntexX4U96TUW_VfarF4g5HMajFd1Iv1Qmar21AQ6Os0Kktox8NxAQNOjCx0TSMU1Dz_OKrzO5Zf6dcHU7beSbS5u0NxFrdo8Da24sTVzNjtnBbrtILs6Qabls2jKOz1Py"/>
+<div class="absolute inset-0 bg-gradient-to-b from-black/0 via-black/60 to-black"></div>
+</div>
+<div class="relative z-10 text-center px-margin-mobile max-w-4xl mx-auto">
+<span class="inline-block px-3 py-1 mb-stack-sm rounded-full bg-purple-500/20 border border-purple-500/30 text-purple-400 font-label-bold">PREMIUM TECH RESTORATION</span>
+<h1 class="font-headline-xl text-headline-xl text-white mb-stack-md leading-tight">Expert Repairs for Your Elite Devices</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-stack-lg">From shattered screens to battery failures, our Abuja-based specialist team restores your mobile experience with authentic parts and guaranteed precision.</p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<button class="bg-purple-600 text-white px-8 py-4 rounded-xl font-label-bold flex items-center justify-center gap-2 cyber-glow transition-all active:scale-95">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+                    BOOK A REPAIR
+                </button>
+<button class="border border-purple-500/50 text-purple-400 px-8 py-4 rounded-xl font-label-bold flex items-center justify-center gap-2 hover:bg-purple-500/10 transition-all active:scale-95">
+<span class="material-symbols-outlined" data-icon="chat">chat</span>
+                    GET AN ESTIMATE
+                </button>
+</div>
+</div>
+</section>
+<!-- Services Bento Grid -->
+<section class="py-stack-lg px-margin-mobile max-w-7xl mx-auto">
+<div class="mb-stack-lg">
+<h2 class="font-headline-lg text-headline-lg text-white">Our Specialties</h2>
+<div class="h-1 w-20 bg-purple-500 mt-2"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Screen Repairs -->
+<div class="md:col-span-8 group relative overflow-hidden rounded-xl glass-panel p-8 min-h-[350px] flex flex-col justify-end border border-white/10 hover:border-purple-500/30 transition-all">
+<img alt="Screen repair" class="absolute inset-0 w-full h-full object-cover opacity-10 group-hover:scale-105 transition-transform duration-700" data-alt="Detailed macro shot of a cracked glass smartphone screen being replaced by a technician wearing antistatic gloves" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC27e4pl-GVo8dH6rEE3kitRow8YUfTQi3DCLem02vOPVIsGDtXmbRYRQXBjo9GLf0aa_JH03vmU_X1MY1lJ6bsFRJpoAZldSN82h5C52uM2yKCTTO2CS7Lw50EfmG1oJbM7bHkfd0ITLPs4hOjPHJ-D00RdJg6nanUZ9UZSKuOgQz9ah9ZEH2hrB1lasvJT8HxUbUDdCfuRrrCRiOOYeOGg_-tY0q4tOUf8hEt0ReCwMq-D9GVtsgWNbstQXJBb4xJ2UyPy_WBkxCF"/>
+<div class="relative z-10">
+<span class="material-symbols-outlined text-purple-400 text-4xl mb-4" data-icon="phonelink_erase">phonelink_erase</span>
+<h3 class="font-headline-md text-headline-md text-white mb-2">Screen Replacements</h3>
+<p class="text-on-surface-variant max-w-md mb-6">Original OLED &amp; LCD panels for iPhone, Samsung, and Pixel. Zero touch-lag guaranteed.</p>
+<div class="flex items-center gap-4">
+<span class="bg-surface-container px-3 py-1 rounded-lg border border-white/10 text-purple-400 font-label-bold">From ₦45,000</span>
+<span class="text-purple-300 font-label-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="verified" data-weight="fill">verified</span>
+                            90-DAY WARRANTY
+                        </span>
+</div>
+</div>
+</div>
+<!-- Battery Service -->
+<div class="md:col-span-4 group glass-panel p-8 rounded-xl border border-white/10 flex flex-col items-center text-center justify-center hover:bg-surface-container-high transition-all">
+<span class="material-symbols-outlined text-purple-400 text-5xl mb-6" data-icon="battery_charging_full">battery_charging_full</span>
+<h3 class="font-headline-md text-headline-md text-white mb-2">Battery Health</h3>
+<p class="text-on-surface-variant mb-6 font-body-sm">Genuine high-capacity cells to revive your device's stamina.</p>
+<button class="text-purple-400 font-label-bold hover:underline">REPLACE NOW</button>
+</div>
+<!-- iWatch Repairs -->
+<div class="md:col-span-4 glass-panel p-8 rounded-xl border border-white/10 hover:border-purple-500/30 transition-all flex flex-col justify-between group">
+<div>
+<span class="material-symbols-outlined text-purple-400 text-4xl mb-4" data-icon="watch">watch</span>
+<h3 class="font-headline-md text-headline-md text-white mb-2">iWatch Repairs</h3>
+<p class="text-on-surface-variant font-body-sm">Glass, sensor, and battery services for all Series models.</p>
+</div>
+<div class="mt-6 flex justify-between items-center">
+<span class="text-white font-price-display text-lg">₦25k+</span>
+<span class="material-symbols-outlined text-purple-400 group-hover:translate-x-2 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+<!-- Logic Board -->
+<div class="md:col-span-8 glass-panel p-8 rounded-xl border border-white/10 overflow-hidden relative group">
+<div class="flex flex-col md:flex-row gap-8 items-center h-full relative z-10">
+<div class="md:w-1/2">
+<h3 class="font-headline-md text-headline-md text-white mb-4">Board-Level Micro-Soldering</h3>
+<p class="text-on-surface-variant mb-6">Recover devices from water damage or charging port failures with precision micro-repair techniques.</p>
+<ul class="space-y-2">
+<li class="flex items-center gap-2 text-sm text-on-surface"><span class="material-symbols-outlined text-purple-400 text-xs" data-icon="check_circle">check_circle</span> Water Damage Recovery</li>
+<li class="flex items-center gap-2 text-sm text-on-surface"><span class="material-symbols-outlined text-purple-400 text-xs" data-icon="check_circle">check_circle</span> IC Chip Replacement</li>
+<li class="flex items-center gap-2 text-sm text-on-surface"><span class="material-symbols-outlined text-purple-400 text-xs" data-icon="check_circle">check_circle</span> Data Retrieval</li>
+</ul>
+</div>
+<div class="md:w-1/2 h-full flex items-center justify-center">
+<div class="w-full h-48 rounded-lg bg-black border border-white/5 flex items-center justify-center relative overflow-hidden">
+<img alt="Soldering" class="w-full h-full object-cover opacity-30" data-alt="Electronic motherboard with components being soldered using a high-precision digital microscope view" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_NBx6l1oBPoDCQ3RrkZOixpdzis2ScBklQnjq0xH-N_aEdnoK0D3z3t2jSojiK8E7vVrubPQNN2V8AslmYEmnxyEQZ6aAHA3zQQK8-EX6NGkpIUkEl62rV_a1wFw3_l1heqrSfO31tWOjD9TPdy6PNlq__5fCHMAgY2_DR8vpD-k-6LiNI36CYN1o37IVIT5U8vv1sHdDo-JZh8UJAHDg-swgLYfup-1aweqs0WNbEMlZ_yd4B77dQOdZKUhZNK5fwksa9ADO_fYU"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-purple-500/50 text-6xl" data-icon="memory">memory</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials -->
+<section class="bg-surface-container-low py-stack-lg">
+<div class="max-w-7xl mx-auto px-margin-mobile">
+<div class="text-center mb-stack-lg">
+<h2 class="font-headline-lg text-headline-lg text-white mb-2">Voices from Abuja</h2>
+<p class="text-on-surface-variant">Trusted by the capital's tech enthusiasts</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Testimonial 1 -->
+<div class="glass-panel p-6 rounded-xl border border-white/5 flex flex-col gap-4">
+<div class="flex text-purple-400 gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" data-weight="fill">star</span>
+</div>
+<p class="text-on-surface font-body-md italic leading-relaxed">"Thought my iPhone 14 Pro Max was gone after the Maitama rain. Everything Phones brought it back to life in 24 hours. Phenomenal service."</p>
+<div class="flex items-center gap-3 mt-2">
+<div class="w-10 h-10 rounded-full bg-purple-500/20 flex items-center justify-center text-purple-400 font-bold">EM</div>
+<div>
+<p class="text-sm font-label-bold text-white uppercase">Emeka Nwosu</p>
+<p class="text-xs text-on-surface-variant">Verified Customer</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="glass-panel p-6 rounded-xl border border-white/5 flex flex-col gap-4">
+<div class="flex text-purple-400 gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" data-weight="fill">star</span>
+</div>
+<p class="text-on-surface font-body-md italic leading-relaxed">"Best screen repair in Garki. They used a genuine part and the TrueTone still works perfectly. No more cheap knockoffs for me."</p>
+<div class="flex items-center gap-3 mt-2">
+<div class="w-10 h-10 rounded-full bg-purple-500/20 flex items-center justify-center text-purple-400 font-bold">AS</div>
+<div>
+<p class="text-sm font-label-bold text-white uppercase">Amina Saliu</p>
+<p class="text-xs text-on-surface-variant">Verified Customer</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 3 -->
+<div class="glass-panel p-6 rounded-xl border border-white/5 flex flex-col gap-4">
+<div class="flex text-purple-400 gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" data-weight="fill">star</span>
+</div>
+<p class="text-on-surface font-body-md italic leading-relaxed">"The tracking system is what got me. I could see exactly when my iWatch was being tested. Professionalism at its peak."</p>
+<div class="flex items-center gap-3 mt-2">
+<div class="w-10 h-10 rounded-full bg-purple-500/20 flex items-center justify-center text-purple-400 font-bold">OJ</div>
+<div>
+<p class="text-sm font-label-bold text-white uppercase">Obinna J.</p>
+<p class="text-xs text-on-surface-variant">Verified Customer</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-stack-lg px-margin-mobile relative overflow-hidden">
+<div class="max-w-5xl mx-auto glass-panel p-12 rounded-3xl border border-purple-500/20 text-center relative z-10">
+<h2 class="font-headline-lg text-headline-lg text-white mb-4">Ready to revive your device?</h2>
+<p class="text-on-surface-variant mb-stack-lg max-w-xl mx-auto">Skip the queue by booking your repair slot online. Our technicians are ready to provide elite-level service today.</p>
+<div class="flex flex-col sm:flex-row justify-center gap-6 items-center">
+<a class="bg-purple-600 text-white px-10 py-5 rounded-xl font-label-bold text-lg hover:scale-105 transition-all shadow-[0_10px_30px_rgba(157,78,221,0.2)] active:scale-95" href="#">BOOK MY REPAIR NOW</a>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-purple-400" data-icon="shield_with_heart" data-weight="fill">shield_with_heart</span>
+<span class="text-on-surface font-label-bold uppercase">100% Genuine Parts</span>
+</div>
+</div>
+</div>
+<!-- Background glow decoration -->
+<div class="absolute -bottom-24 -left-24 w-96 h-96 bg-purple-500/10 blur-[120px] rounded-full"></div>
+<div class="absolute -top-24 -right-24 w-96 h-96 bg-purple-900/5 blur-[120px] rounded-full"></div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-black w-full pt-20 pb-10 border-t border-white/5 font-space-grotesk text-sm uppercase tracking-widest">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 max-w-[1440px] mx-auto">
+<div class="flex flex-col gap-4">
+<div class="text-lg font-black text-purple-500">Everything Phones</div>
+<p class="text-gray-500 normal-case tracking-normal max-w-xs">Nigeria's premium destination for elite mobile retail and expert technical restoration services.</p>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="text-purple-600 font-semibold uppercase tracking-widest">Quick Links</h4>
+<ul class="flex flex-col gap-2">
+<li><a class="text-gray-500 hover:text-purple-400 transition-all cursor-pointer" href="#">About Us</a></li>
+<li><a class="text-gray-500 hover:text-purple-400 transition-all cursor-pointer" href="#">Contact</a></li>
+<li><a class="text-gray-500 hover:text-purple-400 transition-all cursor-pointer" href="#">Privacy Policy</a></li>
+<li><a class="text-gray-500 hover:text-purple-400 transition-all cursor-pointer" href="#">FAQ</a></li>
+</ul>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="text-purple-600 font-semibold uppercase tracking-widest">Our Location</h4>
+<p class="text-gray-500 normal-case tracking-normal">Suite 402, Elite Plaza,<br/>Wuse II, Abuja, Nigeria</p>
+<div class="flex items-center gap-2 text-purple-500 normal-case tracking-normal">
+<span class="material-symbols-outlined text-sm" data-icon="call">call</span>
+<span>+234 800 123 4567</span>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="text-purple-600 font-semibold uppercase tracking-widest">Follow Us</h4>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center hover:text-purple-400 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="public">public</span>
+</a>
+<a class="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center hover:text-purple-400 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="share">share</span>
+</a>
+</div>
+<p class="text-gray-500 mt-4 normal-case tracking-tight">© 2024 Everything Phones. Your Phone, Your Trust, Our Commitment.</p>
+</div>
+</div>
+</footer>
+</body></html>

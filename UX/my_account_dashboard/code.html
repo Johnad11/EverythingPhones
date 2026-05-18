@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Everything Phones | User Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed": "#2e004e",
+                        "outline": "#988d9e",
+                        "on-tertiary": "#482a00",
+                        "error": "#ffb4ab",
+                        "tertiary-fixed-dim": "#fdb969",
+                        "tertiary": "#fdb969",
+                        "primary-fixed-dim": "#deb7ff",
+                        "on-surface-variant": "#cfc2d5",
+                        "surface-container": "#231e26",
+                        "tertiary-container": "#7e4d00",
+                        "on-secondary-fixed-variant": "#6a0baa",
+                        "on-error-container": "#ffdad6",
+                        "surface-bright": "#3d3741",
+                        "on-tertiary-fixed-variant": "#663e00",
+                        "tertiary-fixed": "#ffddba",
+                        "on-primary-container": "#e4c2ff",
+                        "on-background": "#eadfec",
+                        "secondary-fixed-dim": "#e0b6ff",
+                        "on-primary-fixed": "#2d0050",
+                        "background": "#16121a",
+                        "on-primary-fixed-variant": "#680eac",
+                        "primary": "#deb7ff",
+                        "secondary": "#e0b6ff",
+                        "surface-container-low": "#1f1a22",
+                        "surface-dim": "#16121a",
+                        "surface": "#16121a",
+                        "primary-container": "#7b2cbf",
+                        "inverse-on-surface": "#342e38",
+                        "secondary-container": "#6d11ad",
+                        "surface-container-lowest": "#110c15",
+                        "primary-fixed": "#f1dbff",
+                        "outline-variant": "#4c4353",
+                        "on-surface": "#eadfec",
+                        "on-error": "#690005",
+                        "inverse-surface": "#eadfec",
+                        "surface-container-high": "#2d2831",
+                        "on-primary": "#4a007f",
+                        "surface-variant": "#38333c",
+                        "inverse-primary": "#8234c6",
+                        "on-secondary": "#4c007d",
+                        "secondary-fixed": "#f2daff",
+                        "surface-container-highest": "#38333c",
+                        "on-secondary-container": "#d7a4ff",
+                        "on-tertiary-container": "#ffc480",
+                        "error-container": "#93000a",
+                        "surface-tint": "#deb7ff",
+                        "on-tertiary-fixed": "#2b1700"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "base": "8px",
+                        "margin": "32px",
+                        "gutter": "24px",
+                        "sm": "12px",
+                        "lg": "48px",
+                        "xl": "80px",
+                        "md": "24px",
+                        "xs": "4px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Space Grotesk"],
+                        "label-sm": ["Space Grotesk"],
+                        "body-md": ["Space Grotesk"],
+                        "headline-md": ["Space Grotesk"],
+                        "label-md": ["Space Grotesk"],
+                        "body-lg": ["Space Grotesk"],
+                        "headline-xl": ["Space Grotesk"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(35, 30, 38, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .neon-glow {
+            box-shadow: 0 8px 32px rgba(123, 44, 191, 0.3);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #16121a;
+            color: #eadfec;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<nav class="sticky top-0 w-full z-50 flex justify-between items-center px-6 py-4 md:px-12 bg-zinc-950/80 backdrop-blur-lg border-b border-white/10 shadow-[0_4px_20px_rgba(123,44,191,0.15)] font-['Space_Grotesk'] tracking-tight">
+<div class="text-xl font-bold text-white uppercase tracking-widest">Everything Phones</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-zinc-400 hover:text-white transition-colors hover:text-purple-400 hover:drop-shadow-[0_0_10px_rgba(157,78,221,0.6)] duration-300" href="#">Shop</a>
+<a class="text-zinc-400 hover:text-white transition-colors hover:text-purple-400 hover:drop-shadow-[0_0_10px_rgba(157,78,221,0.6)] duration-300" href="#">Swap</a>
+<a class="text-zinc-400 hover:text-white transition-colors hover:text-purple-400 hover:drop-shadow-[0_0_10px_rgba(157,78,221,0.6)] duration-300" href="#">Repairs</a>
+<a class="text-zinc-400 hover:text-white transition-colors hover:text-purple-400 hover:drop-shadow-[0_0_10px_rgba(157,78,221,0.6)] duration-300" href="#">Gaming</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="scale-95 transition-transform duration-200 ease-out text-purple-400 border-b-2 border-purple-500 pb-1">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</button>
+<button class="scale-95 transition-transform duration-200 ease-out text-zinc-400 hover:text-white transition-colors">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+</button>
+</div>
+</nav>
+<main class="flex-grow px-6 py-12 md:px-12 lg:px-24 space-y-12">
+<!-- Welcome Message -->
+<header class="space-y-2">
+<p class="font-label-md text-label-md text-primary tracking-widest uppercase">Member Dashboard</p>
+<h1 class="font-headline-xl text-headline-xl text-on-background">Welcome back, Alex</h1>
+<p class="font-body-lg text-body-lg text-outline max-w-2xl">Manage your tech ecosystem, track pending swaps, and explore curated upgrades tailored to your hardware profile.</p>
+</header>
+<!-- Bento Grid Dashboard -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- My Orders Tracker (Glass Card) -->
+<section class="md:col-span-8 glass-panel rounded-xl p-8 space-y-6">
+<div class="flex justify-between items-center">
+<h2 class="font-headline-md text-headline-md flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="package_2">package_2</span>
+                        My Orders
+                    </h2>
+<span class="font-label-sm text-label-sm text-primary uppercase cursor-pointer hover:underline">View All</span>
+</div>
+<div class="space-y-4">
+<!-- Order Item -->
+<div class="flex flex-col md:flex-row md:items-center justify-between p-4 bg-surface-container rounded-lg border border-outline-variant/30">
+<div class="flex items-center gap-4">
+<div class="w-16 h-16 bg-surface-container-highest rounded-lg flex items-center justify-center border border-white/5">
+<img alt="Phone" class="w-12 h-12 object-contain" data-alt="close-up profile of a sleek titanium smartphone with multiple camera lenses reflecting purple studio light on a black background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-5A_OM6vaAoa-CbwbXnsReH9auLw8BF3Zb1aop92J_tj9jIaMN615D6ka5aBGz9Y7cKC1Cq7E0f5JKr_Oq4ar0C2fX7ayZnv-A7sgNN1O2Nblz8fmr0l1ceI1ViDcnDcQdsgToKG1Vj7yKpMGgdA8Ddl6CkXonQwN7i1PxCj-bsCL41RhuarKMAkfeom5AiOrQKB8u5Sl3bNhVe_M7o2PM5FT4yIhVR5a8NJTXg-9T6CkaRAwzXG2UYyUlLOD7LuUurNyYsc_9ivG"/>
+</div>
+<div>
+<p class="font-label-md text-label-md text-white">iPhone 15 Pro Max</p>
+<p class="font-label-sm text-label-sm text-outline">Order #EP-992341</p>
+</div>
+</div>
+<div class="mt-4 md:mt-0 flex flex-col md:items-end gap-2">
+<span class="px-3 py-1 bg-primary-container/20 text-primary text-label-sm rounded-full border border-primary/30">In Transit</span>
+<p class="text-label-sm text-outline">Estimated delivery: Tomorrow</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Quick Actions / Repair Status (Narrow Vertical) -->
+<section class="md:col-span-4 glass-panel rounded-xl p-8 space-y-6">
+<h2 class="font-headline-md text-headline-md flex items-center gap-2 text-tertiary">
+<span class="material-symbols-outlined" data-icon="build">build</span>
+                    Repair Status
+                </h2>
+<div class="space-y-6">
+<div class="relative pl-8 border-l-2 border-outline-variant/50">
+<div class="absolute -left-[9px] top-0 w-4 h-4 bg-tertiary rounded-full neon-glow"></div>
+<p class="font-label-md text-label-md text-white">Diagnostics Complete</p>
+<p class="font-label-sm text-label-sm text-outline">Your Pixel 8 Screen is being tested.</p>
+</div>
+<div class="relative pl-8 border-l-2 border-outline-variant/50">
+<div class="absolute -left-[9px] top-0 w-4 h-4 bg-outline-variant rounded-full"></div>
+<p class="font-label-md text-label-md text-outline">Part Replacement</p>
+<p class="font-label-sm text-label-sm text-outline-variant">Awaiting components.</p>
+</div>
+</div>
+<button class="w-full py-4 bg-surface-container hover:bg-surface-container-high text-white font-label-md rounded-lg border border-white/10 transition-all">
+                    Track Repair Details
+                </button>
+</section>
+<!-- Swap History (Glass Card Wide) -->
+<section class="md:col-span-12 glass-panel rounded-xl p-8 space-y-8">
+<h2 class="font-headline-md text-headline-md flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary" data-icon="swap_horiz">swap_horiz</span>
+                    Swap History
+                </h2>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b border-outline-variant/30">
+<th class="pb-4 font-label-sm text-label-sm text-outline uppercase tracking-wider">Device Traded</th>
+<th class="pb-4 font-label-sm text-label-sm text-outline uppercase tracking-wider">Device Received</th>
+<th class="pb-4 font-label-sm text-label-sm text-outline uppercase tracking-wider">Date</th>
+<th class="pb-4 font-label-sm text-label-sm text-outline uppercase tracking-wider">Credit Earned</th>
+<th class="pb-4 font-label-sm text-label-sm text-outline uppercase tracking-wider text-right">Receipt</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/10">
+<tr>
+<td class="py-6 font-body-md text-body-md">Galaxy S22 Ultra</td>
+<td class="py-6 font-body-md text-body-md text-primary">Galaxy S24 Ultra</td>
+<td class="py-6 font-body-md text-body-md text-outline">Feb 12, 2024</td>
+<td class="py-6 font-body-md text-body-md">$450.00</td>
+<td class="py-6 text-right">
+<span class="material-symbols-outlined text-outline cursor-pointer hover:text-white" data-icon="download">download</span>
+</td>
+</tr>
+<tr>
+<td class="py-6 font-body-md text-body-md">iPhone 13</td>
+<td class="py-6 font-body-md text-body-md text-primary">iPhone 15</td>
+<td class="py-6 font-body-md text-body-md text-outline">Nov 04, 2023</td>
+<td class="py-6 font-body-md text-body-md">$320.00</td>
+<td class="py-6 text-right">
+<span class="material-symbols-outlined text-outline cursor-pointer hover:text-white" data-icon="download">download</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- Recommended Gadgets (Grid) -->
+<section class="md:col-span-12 space-y-8">
+<h2 class="font-headline-md text-headline-md">Recommended for Your Gear</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Recommendation Card 1 -->
+<div class="glass-panel rounded-xl overflow-hidden group">
+<div class="h-48 relative overflow-hidden bg-surface-container-highest">
+<img alt="Headphones" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="professional matte black noise-canceling headphones floating against a dark background with soft purple ambient lighting and rim highlights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgzF_tSxKcEiivJC8cBDEgKM3diTGwOE5v1UoAPB_Z_98GXvpmsgPk1H2a7s0GS6FpV2HoAPUJOEPbhTMKXvpgm2yaquTyHxyu82UUyw493wi4qIdCqxuFf6U-HivyNCgl552m980L3FU3NKINqdGxHvPM9Dn3aXm9pg9-tGEDZFQHTEYvrEb660eJ_BpRkh6dOa9ccRme6pqO4vrJhda17QsmCnEhXCkS1PiTL9ep0TJDzgKqmo0IDm3NP56TH2ouQ3YIcuSs2lUB"/>
+</div>
+<div class="p-6 space-y-2">
+<p class="font-label-sm text-label-sm text-primary uppercase">Audio</p>
+<h3 class="font-headline-md text-headline-md text-sm">Everything Sound Elite</h3>
+<p class="font-body-md text-body-md text-outline text-sm">$299.00</p>
+<button class="w-full mt-4 py-3 bg-primary text-on-primary-fixed font-label-md rounded-lg neon-glow transition-all active:scale-95">Add to Cart</button>
+</div>
+</div>
+<!-- Recommendation Card 2 -->
+<div class="glass-panel rounded-xl overflow-hidden group">
+<div class="h-48 relative overflow-hidden bg-surface-container-highest">
+<img alt="Watch" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="high-tech titanium smartwatch with a vibrant neon purple interface displayed on a dark wrist rest under dramatic studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqkU9HdXUog60UH7Bl7kFiLLXEwjmC46nBg81q7wtHsxyXjUPr3qEqTZ4IuTWdh6_qCJXtBNIu7tipOKmguH6RlU4REwJG41-g6TVk93DHqMWweaIPsUBED9_ngsz4aW1ghAcEpDUyySQttAd-WeVSd7nBL_KEpvA5WFd2kaRRWj2f0rBDkbQiG-ztgplzeI9L3gepkquG7ZO_bzahLd-JTmcpW1NEQPbmaVyQLDSWx10OYHCQVf-aSHyqGmeBymRxrHSKQWoNFT2E"/>
+</div>
+<div class="p-6 space-y-2">
+<p class="font-label-sm text-label-sm text-primary uppercase">Wearables</p>
+<h3 class="font-headline-md text-headline-md text-sm">Series X Tracker</h3>
+<p class="font-body-md text-body-md text-outline text-sm">$349.00</p>
+<button class="w-full mt-4 py-3 border border-primary text-primary font-label-md rounded-lg hover:bg-primary/10 transition-all">Details</button>
+</div>
+</div>
+<!-- Recommendation Card 3 -->
+<div class="glass-panel rounded-xl overflow-hidden group">
+<div class="h-48 relative overflow-hidden bg-surface-container-highest">
+<img alt="Magsafe Case" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="minimalist translucent smartphone case with magnetic charging rings glowing in neon purple against a dark granite surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbnSQ3DljwcF1Y44h47z5DE98bBG8R6sr1BqDiJYzS7F8m-dyt-npUMz_DSVJfn6cPSSuBdryZjMRITnhEM1_v8KSv5l0Z3NaU_d71RhnS9TVblu2LkJ325tqyLSgBYkW7WClsqJapa6MJspHrnHxh4wsdmxYQ0xQFc55ciaM426x9LwiyUZrZ8Z57-MSlO3g2iLprdx5kK3j60Nk3KvRaLw-dKW2x28sigjLVsz4FY4Duj9BO31KSiXKJLYj2iwRP4_aPKbliQw_y"/>
+</div>
+<div class="p-6 space-y-2">
+<p class="font-label-sm text-label-sm text-primary uppercase">Protection</p>
+<h3 class="font-headline-md text-headline-md text-sm">Glass Armor Shell</h3>
+<p class="font-body-md text-body-md text-outline text-sm">$45.00</p>
+<button class="w-full mt-4 py-3 border border-primary text-primary font-label-md rounded-lg hover:bg-primary/10 transition-all">Details</button>
+</div>
+</div>
+<!-- Recommendation Card 4 -->
+<div class="glass-panel rounded-xl overflow-hidden group">
+<div class="h-48 relative overflow-hidden bg-surface-container-highest">
+<img alt="Fast Charger" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="ultra-compact 100W gallium nitride charger in matte black with purple LED indicators and braided cables on a tech-themed desk" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6MfhozZVSBr9byZq5x7uNvQZb73EZ54ACs8Dj8wQE4M_BEHdv5eC3LPCvMMa8ElEkdFTGokJYd8iceiqJTMJfwLAnz5E-bjf_cnmBnurKLp8qDtxIGn07-rJ1Mi2aSSHpUbTGp-yU0zU2imNjmqP23ZMvhSz9M2UDuzvU8_iNybXkt2P2aTeQMaHHbIL-TFbG2E8GJSeIhSHdfhpK0fyHVb_8LKYgmiA5K-EwKva3FcTMm7OFE-FEjJKuU69--9aGzchbelG3FHiR"/>
+</div>
+<div class="p-6 space-y-2">
+<p class="font-label-sm text-label-sm text-primary uppercase">Power</p>
+<h3 class="font-headline-md text-headline-md text-sm">HyperCharge 120W</h3>
+<p class="font-body-md text-body-md text-outline text-sm">$89.00</p>
+<button class="w-full mt-4 py-3 border border-primary text-primary font-label-md rounded-lg hover:bg-primary/10 transition-all">Details</button>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full px-6 py-12 md:px-12 flex flex-col md:flex-row justify-between gap-8 items-center bg-black border-t border-zinc-900 font-['Space_Grotesk'] text-sm antialiased">
+<div class="text-lg font-black text-purple-500">Everything Phones</div>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="text-zinc-500 hover:text-purple-300 transition-all" href="#">Abuja Office</a>
+<a class="text-zinc-500 hover:text-purple-300 transition-all" href="#">Shop</a>
+<a class="text-zinc-500 hover:text-purple-300 transition-all" href="#">Swap</a>
+<a class="text-zinc-500 hover:text-purple-300 transition-all" href="#">Repairs</a>
+<a class="text-zinc-500 hover:text-purple-300 transition-all text-purple-400 font-semibold" href="#">Dashboard</a>
+<a class="text-zinc-500 hover:text-purple-300 transition-all" href="#">Privacy Policy</a>
+</div>
+<div class="text-zinc-500 text-center md:text-right opacity-80 hover:opacity-100 transition-opacity">
+            © 2024 Everything Phones. Your Phone, Your Trust, Our Commitment.
+        </div>
+</footer>
+</body></html>
